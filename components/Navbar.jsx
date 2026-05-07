@@ -19,6 +19,14 @@ const Navbar = () => {
         })
     }, [])
 
+    useEffect(() => {
+        const timer = setInterval(() => {
+            if (search && search.length > 2) {
+                console.log('search_preview', search)
+            }
+        }, 1000)
+    }, [search])
+
     const handleSearch = (e) => {
         e.preventDefault()
         router.push(`/shop?search=${search}`)
